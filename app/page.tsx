@@ -6,7 +6,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Anthony Quispilaya | Full-Stack Engineer",
   description:
-    "I am a full-stack engineer who ships fast, thinks user-first, and builds practical AI automation and systems-integration projects.",
+    "Reliable full-stack engineer building useful products, practical AI systems, and systems integrations.",
   openGraph: {
     title: "Anthony Quispilaya | Full-Stack Engineer",
     description:
@@ -15,14 +15,15 @@ export const metadata: Metadata = {
   },
 };
 
-const projects = [
+const featuredProjects = [
   {
-    eyebrow: "HackPrinceton",
-    title: "LEGR won Best Business & Enterprise Hack",
-    body: "My team and I shipped LEGR in 36 hours: an AI finance operations platform with autonomous agents, live dashboards, and smart alerts for startup teams.",
-    role: "I tested sponsor API tools, debugged integration issues, supported backend architecture, and helped connect backend data to the frontend so the final product could render real data.",
-    proof:
-      "Won Best Business & Enterprise Hack at HackPrinceton 2026 and Best Use of Enter Pro by Enter Pro after a 36-hour build.",
+    priority: "Flagship proof",
+    eyebrow: "HackPrinceton 2026 winner",
+    title: "LEGR",
+    body: "AI-powered finance operations platform for startup teams, with a real-time dashboard and iMessage-style alerts for business workflows.",
+    role: "Integrated sponsor API tooling, wired backend data paths, debugged real-time flows, and built testing support APIs so the product could show live data under deadline pressure.",
+    result:
+      "Won Best Business & Enterprise Hack and Best Use of Enter Pro after a 36-hour build.",
     image: "/assets/HackPrinceton%20Winner.jpg",
     imageAlt:
       "Anthony with the LEGR team after winning Best Business and Enterprise Hack at HackPrinceton.",
@@ -31,8 +32,6 @@ const projects = [
     stack: [
       "Python",
       "JavaScript",
-      "HTML5",
-      "CSS3",
       "Supabase",
       "OpenAI",
       "Claude",
@@ -42,11 +41,13 @@ const projects = [
     ],
   },
   {
-    eyebrow: "Capstone",
+    priority: "Sponsor product",
+    eyebrow: "Capstone frontend developer",
     title: "Creator Copilot by Tapyoca",
-    body: "I built the frontend foundation for Creator Copilot, a sponsored financial platform for artists and filmmakers to manage budgets, expenses, revenue, and project-level financial data.",
-    role: "I owned the frontend structure on a three-person team: stack decisions, page layouts, Supabase authentication with Google login, reusable UI, sponsor-aligned styling, and the final product demo.",
-    proof: "This shows product ownership in a stakeholder environment: I translated sponsor expectations into usable screens and kept the frontend moving ahead of the build.",
+    body: "Financial platform for creators, artists, and filmmakers to manage budgets, expenses, CSV import/export, dashboards, and AI-assisted insights.",
+    role: "Owned frontend structure, dashboard UI, project flows, sponsor-aligned styling, Supabase/auth integration, and AI assistant integration work on a three-person team.",
+    result:
+      "Turned sponsor requirements into usable product flows with real stakeholder feedback.",
     image: "/assets/Creator%20Copilot.png",
     imageAlt:
       "Creator Copilot product interface showing the Tapyoca capstone application.",
@@ -65,102 +66,96 @@ const projects = [
     ],
   },
   {
-    eyebrow: "Latest AI project",
+    priority: "AI systems",
+    eyebrow: "Practical AI operations",
     title: "OpsMesh AI",
-    body: "OpsMesh AI is my strongest current AI systems project: a messaging-first operations platform with a Next.js frontend, FastAPI backend, Postgres storage, orchestration agents, and Photon bridge support.",
-    role: "I combined lessons from Tapyoca's product execution and HackPrinceton's AI sprint into automated workflows that connect messaging, agents, backend systems, and real operations.",
-    proof: "This shows I can move beyond a single AI feature into coordinated workflows, multi-agent orchestration, and product infrastructure.",
+    body: "Messaging-first operations platform concept that connects a Next.js product surface, FastAPI backend, Postgres storage, orchestration agents, and Photon bridge support.",
+    role: "Designed AI-first workflows that connect messages, agents, backend services, and operational actions instead of stopping at a single chatbot feature.",
+    result:
+      "Shows product thinking around useful AI systems: workflows, orchestration, and real business operations.",
     link: "https://github.com/Anthony-Quispilaya/opsmeshai",
     linkLabel: "View GitHub",
     stack: [
       "Next.js",
-      "Docker",
-      "Postgres",
-      "Python",
       "TypeScript",
+      "FastAPI",
+      "Postgres",
+      "Docker",
       "Photon",
-      "Automated workflows",
+      "Agents",
     ],
   },
+];
+
+const supportingProjects = [
   {
     eyebrow: "Systems Integration",
     title: "Steam Games Library Rank System",
-    body: "I built a full-stack PHP and MySQL application that integrates the Steam Web API to generate game libraries, rankings, and social features.",
-    role: "I designed a Dev / QA / Prod multi-VM Linux environment secured through Tailscale VPN, with database replication, automated backups, 2FA, RabbitMQ messaging, and deployment isolation.",
-    proof: "This project shows backend and infrastructure depth: system integration, environment separation, messaging queues, database reliability, security practices, and operational stability beyond a single web app.",
+    body: "Full-stack PHP/MySQL application integrating the Steam Web API with ranking, library, and social features.",
+    role: "Built Dev, QA, and Prod Linux VM environments with Tailscale VPN access, RabbitMQ messaging, replication, backups, logging, monitoring, and deployment separation.",
+    result:
+      "Proof of backend reliability, infrastructure thinking, and operational discipline beyond a single web app.",
     link: "https://github.com/Anthony-Quispilaya/Steam-Games-Library-Rank-System",
     linkLabel: "View GitHub",
     stack: [
       "PHP",
       "MySQL",
       "RabbitMQ",
-      "Linux",
+      "Linux VMs",
       "Tailscale",
       "Steam Web API",
+      "Backups",
     ],
   },
 ];
 
+type PortfolioProject = {
+  priority?: string;
+  eyebrow: string;
+  title: string;
+  body: string;
+  role: string;
+  result: string;
+  image?: string;
+  imageAlt?: string;
+  link: string;
+  linkLabel: string;
+  stack: string[];
+};
+
+const keyProjects: PortfolioProject[] = [
+  ...featuredProjects,
+  ...supportingProjects,
+];
+
 const proofBlocks = [
   {
-    source: "HackPrinceton Team Win",
-    status: "Primary proof",
+    source: "Hackathon Win",
     quote: "Best Business & Enterprise Hack",
     context:
-      "My team and I are shown with the award context visible behind us.",
-    image: "/assets/HackPrinceton%20Winner.jpg",
-    imageAlt:
-      "LEGR team standing in front of the Best Business and Enterprise Hack winner screen.",
+      "HackPrinceton 2026 selected LEGR for the business and enterprise track award, with LEGR named in the official winner materials.",
   },
   {
-    source: "Official Winner Slide",
-    status: "Award evidence",
-    quote: "LEGR was listed as the Best Business & Enterprise Hack winner.",
+    source: "Tapyoca Sponsor Feedback",
+    quote: "You've been extremely proactive in your work with us thus far.",
     context:
-      "The award slide names LEGR as the winning project and anchors the achievement in event materials.",
-    image: "/assets/LEGR%20WINNER.png",
-    imageAlt:
-      "HackPrinceton award slide naming LEGR as Best Business and Enterprise Hack winner.",
+      "Feedback from Myron Paes, Head Product Manager at Tapyoca, recognizing initiative on the sponsored capstone product.",
   },
   {
     source: "NJIT Recognition",
-    status: "External recognition",
-    quote:
-      "NJIT congratulated Anthony Quispilaya and Sadman Mazumder for winning Best Business/Enterprise Hack and Best Use of Enter Pro.",
+    quote: "NJIT publicly recognized the LEGR team.",
     context:
-      "The post notes the team built the project within a 36-hour HackPrinceton window.",
-    link:
-      "https://www.linkedin.com/feed/update/urn:li:activity:7457397339591307264/?utm_source=share&utm_medium=member_desktop&rcm=ACoAADUojL0BnvhdHtVAObhuMfPEp-F440dUqac",
+      "The post connects the project to both awards and gives the achievement institutional visibility.",
+    link: "https://www.linkedin.com/feed/update/urn:li:activity:7457397339591307264/?utm_source=share&utm_medium=member_desktop&rcm=ACoAADUojL0BnvhdHtVAObhuMfPEp-F440dUqac",
     linkLabel: "Open post",
   },
   {
     source: "Enter Pro Recognition",
-    status: "Sponsor validation",
-    quote:
-      "Huge congratulations to Anthony Quispilaya and the entire LEGR team for winning 1st Place in Best Business & Enterprise Hack.",
-    context:
-      "The sponsor highlighted LEGR as an AI-powered solution for real startup problems, built in 36 hours.",
-    link:
-      "https://www.linkedin.com/feed/update/urn:li:activity:7457396576487976960/?utm_source=share&utm_medium=member_desktop&rcm=ACoAADUojL0BnvhdHtVAObhuMfPEp-F440dUqac",
-    linkLabel: "Open post",
-  },
-  {
-    source: "Enter Pro Forum",
-    status: "Official site proof",
     quote: "Best Use of Enter Pro",
     context:
-      "Enter Pro also posted LEGR's sponsor-track recognition on its own forum, giving the win another source outside LinkedIn.",
-    link:
-      "https://forum.enter.pro/t/0b94d8e7-fbd3-43f5-a589-0a0be54beae9",
-    linkLabel: "Open Enter Pro proof",
-  },
-  {
-    source: "Tapyoca PM Feedback",
-    status: "Stakeholder feedback",
-    quote:
-      "You've been extremely proactive in your work with us thus far, and I'm sure that there will be opportunities available at Tapyoca after this capstone project.",
-    context:
-      "Feedback from Myron Paes, Head Product Manager at Tapyoca, recognizing my initiative and work quality.",
+      "Sponsor-track validation for using Enter Pro in a practical AI finance operations workflow.",
+    link: "https://www.linkedin.com/feed/update/urn:li:activity:7457396576487976960/?utm_source=share&utm_medium=member_desktop&rcm=ACoAADUojL0BnvhdHtVAObhuMfPEp-F440dUqac",
+    linkLabel: "Open post",
   },
 ];
 
@@ -169,7 +164,8 @@ const hackPrincetonCarousel = [
     src: "/assets/DSCF4249.JPG",
     alt: "Anthony at HackPrinceton during the LEGR project presentation.",
     label: "Enter Pro Winner",
-    caption: "Our team was selected for Best Use of Enter Pro at HackPrinceton 2026 after shipping LEGR in just 36 hours.",
+    caption:
+      "Our team was selected for Best Use of Enter Pro at HackPrinceton 2026 after shipping LEGR in just 36 hours.",
   },
   {
     src: "/assets/HackPrinceton%20Winner.jpg",
@@ -188,27 +184,27 @@ const hackPrincetonCarousel = [
 const capabilities = [
   {
     title: "Full-stack web development",
-    body: "I connect frontend, backend APIs, databases, authentication, and user-facing flows into working products.",
+    body: "React/Next.js product surfaces connected to APIs, auth, databases, dashboards, and user flows.",
   },
   {
-    title: "Speed and delivery",
-    body: "I ship early enough for feedback, catch issues before deadline pressure, and keep the next milestone visible.",
-  },
-  {
-    title: "User focus",
-    body: "I look for friction, simplify access to what users need, and automate repetitive work when it helps the experience.",
-  },
-  {
-    title: "AI and automation",
-    body: "I build practical AI workflows across LEGR, Creator Copilot, and OpsMesh AI instead of stopping at demos.",
+    title: "Practical AI automation",
+    body: "AI workflows built around real tasks: finance ops, creator insights, messaging, and operations support.",
   },
   {
     title: "Systems integration",
-    body: "I work across Linux environments, queues, VPN access, replication, backups, and deployment separation.",
+    body: "Steam API, RabbitMQ, Linux VMs, VPN access, replication, backups, and deployment separation.",
   },
   {
-    title: "Python",
-    body: "I have Python fundamentals from earlier work and keep rebuilding deeper language fluency for AI and backend systems.",
+    title: "Reliability and debugging",
+    body: "Comfortable tracing issues across UI, backend paths, environments, and user-facing support needs.",
+  },
+  {
+    title: "Product thinking",
+    body: "I translate stakeholder goals into clear screens, useful defaults, and flows people can actually use.",
+  },
+  {
+    title: "Speed and delivery",
+    body: "I move quickly, keep scope visible, and prioritize working software that can be tested and improved.",
   },
 ];
 
@@ -217,12 +213,16 @@ const experience = [
     role: "Frontend Developer",
     company: "Tapyoca",
     dates: "Jan 2026 to Present",
-    body: "I build frontend features for Creator Copilot, a financial platform for artists and filmmakers to manage budgets, expenses, revenue, and project-level financial data. I create responsive React interfaces, connect Supabase-backed product flows, contribute to Gemini-powered assistant features, and work with teammates through GitHub, Trello, and Agile/Scrum routines.",
+    impact: [
+      "Build React interfaces for Creator Copilot, a sponsored financial platform for creators, artists, and filmmakers.",
+      "Create dashboard, budgeting, expense, CSV, and project-management flows backed by Supabase authentication.",
+      "Collaborate through GitHub, Trello, and Agile/Scrum routines while contributing to AI-assisted insight features.",
+    ],
     stack: [
       "React",
       "JavaScript",
       "Supabase",
-      "Git",
+      "Dashboards",
       "UI/UX",
       "AI Integration",
     ],
@@ -231,14 +231,18 @@ const experience = [
     role: "IT Technician",
     company: "Quest Technologies",
     dates: "Aug 2024 to Sept 2025",
-    body: "I supported hardware, software, workstation, and basic network issues in a high-volume technical environment. The role strengthened my troubleshooting habits: diagnose clearly, document resolutions, set up devices correctly, and help users get back to work with less downtime.",
+    impact: [
+      "Troubleshot hardware, software, workstation, and basic networking issues in professional environments.",
+      "Set up devices, documented resolutions, and helped users return to productive work with less downtime.",
+      "Built strong habits around clear diagnosis, reliability, communication, and follow-through.",
+    ],
     stack: [
       "Technical Support",
       "Troubleshooting",
       "Device Setup",
-      "System Diagnostics",
-      "End-User Support",
-      "Problem Solving",
+      "Networking",
+      "Documentation",
+      "Client Support",
     ],
   },
 ];
@@ -246,24 +250,10 @@ const experience = [
 const pythonProject = {
   title: "Calculator Application",
   link: "https://github.com/Anthony-Quispilaya/midterm_ajq",
-  body: "An interactive command-line calculator built in Python 3.10 with a REPL interface, plugin-based arithmetic commands, calculation history, error handling, logging, and automated tests.",
+  body: "Supporting Python proof: a tested REPL calculator with modular commands, calculation history, error handling, logging, and documentation.",
   proof:
-    "This is older school work from before AI assistants became part of my normal workflow. That matters because it shows I was already building application logic, debugging behavior, handling errors, and testing code from the fundamentals up.",
-  details: [
-    "I built a command-line product with a real REPL loop, not just isolated practice functions.",
-    "The plugin architecture separated each operation into its own command, which shows I understand modular design and extensibility.",
-    "The app tracks calculation history, handles invalid input, protects against division-by-zero errors, and logs behavior for debugging.",
-    "Automated tests and coverage prove I can verify behavior without relying on an AI assistant to tell me whether the program works.",
-    "It shows foundational programming judgment: input handling, state management, command routing, testing, and clear user feedback.",
-  ],
-  stack: [
-    "Python",
-    "pytest",
-    "pytest-cov",
-    "Faker",
-    "pandas",
-    "logging",
-  ],
+    "Shows fundamentals in Python, REST-style endpoint thinking, tests, debugging, and clear user feedback without competing with the flagship projects.",
+  stack: ["Python", "pytest", "pytest-cov", "Faker", "pandas", "logging"],
 };
 
 export default function HomePage() {
@@ -276,12 +266,18 @@ export default function HomePage() {
         Skip to content
       </a>
 
-      <header className="fixed inset-x-0 top-0 z-50 border-b border-[#d7ddcf]/80 bg-[#f7f3ec]/92 backdrop-blur-md">
+      <header className="sticky inset-x-0 top-0 z-50 border-b border-[#d7ddcf]/80 bg-[#f7f3ec]/92 backdrop-blur-md">
         <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-5 py-4 sm:px-8 lg:px-10">
-          <Link href="/" className="text-sm font-bold tracking-[0.18em] !text-[#24352b] uppercase">
+          <Link
+            href="/"
+            className="text-sm font-bold tracking-[0.18em] !text-[#24352b] uppercase"
+          >
             Anthony Quispilaya
           </Link>
-          <nav aria-label="Portfolio sections" className="hidden gap-5 text-sm font-semibold !text-[#4b5966] sm:flex">
+          <nav
+            aria-label="Portfolio sections"
+            className="hidden gap-5 text-sm font-semibold !text-[#4b5966] sm:flex"
+          >
             <a href="#experience">Experience</a>
             <a href="#work">Work</a>
             <a href="#proof">Proof</a>
@@ -291,67 +287,98 @@ export default function HomePage() {
         </div>
       </header>
 
-      <div id="content" className="mx-auto flex w-full max-w-7xl flex-col gap-20 overflow-x-hidden px-5 pt-20 pb-16 sm:px-8 lg:px-10">
-        <section className="grid min-h-[calc(100svh-6rem)] gap-10 pt-8 lg:grid-cols-[1.02fr_0.98fr] lg:items-center lg:pt-4">
+      <div
+        id="content"
+        className="mx-auto flex w-full max-w-7xl flex-col gap-22 overflow-x-hidden px-5 pt-10 pb-16 sm:px-8 lg:gap-28 lg:px-10"
+      >
+        <section className="grid gap-10 pt-6 lg:min-h-[calc(100svh-6rem)] lg:grid-cols-[1fr_0.96fr] lg:items-center lg:pt-0">
           <div className="min-w-0 max-w-3xl">
-            <p className="text-sm font-bold tracking-[0.22em] text-[#697b56] uppercase">
-              Full-stack engineer for user-focused teams
+            <p className="text-sm font-bold tracking-[0.2em] text-[#697b56] uppercase">
+              Full-stack engineer for practical product teams
             </p>
             <h1
-              className="mt-5 max-w-4xl text-4xl leading-[1.02] font-extrabold tracking-normal text-[#17231c] sm:text-6xl lg:text-7xl"
-              style={{ fontFamily: "Avenir Next, Segoe UI, Helvetica Neue, sans-serif" }}
+              className="mt-5 max-w-4xl text-4xl leading-[1.04] font-extrabold tracking-normal text-[#17231c] sm:text-6xl lg:text-7xl"
+              style={{
+                fontFamily: "Avenir Next, Segoe UI, Helvetica Neue, sans-serif",
+              }}
             >
-              The reliable full-stack engineer building useful products and practical AI systems.
+              Reliable full-stack engineer building useful products and
+              practical AI systems.
             </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-[#425247]">
-              I ship early, stay prepared, and build with the user in mind. My work spans
-              frontend product development, backend systems, AI automation, and infrastructure
-              proof from real projects.
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-[#394a40] sm:text-xl sm:leading-9">
+              I turn product ideas into working software across frontend,
+              backend, AI workflows, and systems integration. The proof: a
+              HackPrinceton-winning AI finance platform, a sponsored capstone
+              product, and infrastructure-heavy full-stack work.
             </p>
-            <div className="mt-7 flex flex-wrap gap-3">
+            <div className="mt-8 flex flex-wrap gap-3">
               <a
                 href="#work"
-                className="inline-flex min-h-12 items-center justify-center rounded-full bg-[#17231c] px-5 text-sm font-bold !text-white transition hover:-translate-y-0.5"
+                className="inline-flex min-h-12 items-center justify-center rounded-full bg-[#17231c] px-6 text-base font-bold !text-white shadow-[0_8px_18px_rgba(23,35,28,0.12)] transition hover:-translate-y-0.5 hover:bg-[#25372d]"
               >
-                See the work
+                View Projects
               </a>
               <a
                 href="#contact"
-                className="inline-flex min-h-12 items-center justify-center rounded-full border border-[#b8c1ae] bg-white/70 px-5 text-sm font-bold !text-[#17231c] transition hover:-translate-y-0.5"
+                className="inline-flex min-h-12 items-center justify-center rounded-full border border-[#aeb9a4] bg-white/78 px-6 text-base font-bold !text-[#17231c] transition hover:-translate-y-0.5 hover:bg-white"
               >
-                Get in touch
+                Contact Me
               </a>
             </div>
-            <div className="mt-8 grid max-w-2xl gap-3 sm:grid-cols-3">
-              <ProofStat label="HackPrinceton" value="1st Place Best Business & Enterprise Hack" />
-              <ProofStat label="Sponsor track" value="Best Use of Enter Pro" />
-              <ProofStat label="Build window" value="Shipped LEGR in 36 hours" />
+            <div className="mt-8 flex flex-wrap gap-2.5">
+              {[
+                "Hackathon Winner",
+                "Capstone Frontend Developer",
+                "AI + Full-Stack Projects",
+              ].map((item) => (
+                <span
+                  key={item}
+                  className="rounded-full border border-[#d1d9ca] bg-white/70 px-4 py-2 text-sm font-extrabold text-[#344238]"
+                >
+                  {item}
+                </span>
+              ))}
             </div>
           </div>
 
-          <div className="min-w-0 max-w-full overflow-hidden rounded-[8px] border border-[#cdd7d9] bg-[#e9eff0] p-3 shadow-[0_28px_80px_rgba(30,43,34,0.12)]">
+          <div className="min-w-0 max-w-full overflow-hidden rounded-[8px] border border-[#cdd7d9] bg-[#e9eff0] p-3 shadow-[0_12px_28px_rgba(30,43,34,0.08)] sm:p-4">
             <HackPrincetonCarousel slides={hackPrincetonCarousel} />
+            <div className="grid gap-3 border-x border-b border-white/70 bg-white/82 p-4 sm:grid-cols-3">
+              <ProofStat
+                label="HackPrinceton"
+                value="Best Business & Enterprise Hack"
+              />
+              <ProofStat label="Sponsor track" value="Best Use of Enter Pro" />
+              <ProofStat label="Build window" value="Shipped in 36 hours" />
+            </div>
           </div>
         </section>
 
-        <section aria-labelledby="about-title" className="grid gap-8 border-y border-[#d7ddcf] py-12 lg:grid-cols-[0.3fr_0.46fr_0.24fr] lg:items-center">
+        <section
+          aria-labelledby="about-title"
+          className="grid gap-8 border-y border-[#d7ddcf] py-12 lg:grid-cols-[0.3fr_0.46fr_0.24fr] lg:items-center"
+        >
           <div>
-            <p className="text-sm font-bold tracking-[0.22em] text-[#697b56] uppercase">About</p>
+            <p className="text-sm font-bold tracking-[0.2em] text-[#697b56] uppercase">
+              About
+            </p>
             <h2
               id="about-title"
-              className="mt-3 text-3xl font-extrabold tracking-normal"
-              style={{ fontFamily: "Avenir Next, Segoe UI, Helvetica Neue, sans-serif" }}
+              className="mt-3 text-3xl leading-tight font-extrabold tracking-normal"
+              style={{
+                fontFamily: "Avenir Next, Segoe UI, Helvetica Neue, sans-serif",
+              }}
             >
-              I build quickly, but I do not treat users as an afterthought.
+              Fast builder habits, grounded engineering judgment.
             </h2>
           </div>
-          <p className="max-w-3xl text-xl leading-9 text-[#33433a]">
-            I’m a full-stack engineer with a strong web foundation and a growing focus on
-            AI automation, backend systems, and product reliability. I like moving fast, but
-            I also care about the details that make software useful: clear flows, real data,
-            stable integrations, and less friction for the person using the product.
+          <p className="max-w-3xl text-lg leading-8 text-[#33433a] sm:text-xl sm:leading-9">
+            I care about software that works for the person using it: clear
+            flows, real data, reliable integrations, and fewer repeated tasks.
+            My strongest work sits where product execution meets AI workflows
+            and backend systems.
           </p>
-          <figure className="max-w-xs overflow-hidden rounded-[8px] border border-[#d7ddcf] bg-white/72 p-3 shadow-[0_18px_50px_rgba(30,43,34,0.07)]">
+          <figure className="max-w-xs overflow-hidden rounded-[8px] border border-[#d7ddcf] bg-white/72 p-3 shadow-[0_10px_24px_rgba(30,43,34,0.05)]">
             <div className="relative aspect-square overflow-hidden rounded-[8px] border border-[#d7ddcf] bg-[#e9eff0]">
               <Image
                 src="/assets/headshot_square.jpg"
@@ -362,9 +389,11 @@ export default function HomePage() {
               />
             </div>
             <figcaption className="px-1 pt-4">
-              <p className="text-base font-extrabold text-[#17231c]">Anthony Quispilaya</p>
+              <p className="text-base font-extrabold text-[#17231c]">
+                Anthony Quispilaya
+              </p>
               <p className="mt-1 text-sm leading-6 text-[#506052]">
-                Full-stack engineer building for user-focused teams.
+                Full-stack engineer building useful products and practical AI.
               </p>
             </figcaption>
           </figure>
@@ -373,27 +402,53 @@ export default function HomePage() {
         <section id="experience" className="space-y-8">
           <SectionHeader
             eyebrow="Professional experience"
-            title="Professional environments where reliability mattered."
-            body="My experience combines product development at Tapyoca with hands-on technical support at Quest Technologies, giving me both builder habits and support instincts."
+            title="Product work plus real support discipline."
+            body="I bring frontend product execution from Tapyoca and troubleshooting instincts from Quest Technologies. That mix makes me useful on teams that need both shipping speed and reliability."
           />
           <div className="space-y-5">
             {experience.map((job) => (
-              <article key={`${job.role}-${job.company}`} className="grid gap-5 rounded-[8px] border border-[#d7ddcf] bg-white/72 p-6 shadow-[0_18px_50px_rgba(30,43,34,0.07)] lg:grid-cols-[0.28fr_0.72fr]">
+              <article
+                key={`${job.role}-${job.company}`}
+                className="grid gap-6 rounded-[8px] border border-[#d7ddcf] bg-white/76 p-6 shadow-[0_10px_24px_rgba(30,43,34,0.05)] sm:p-7 lg:grid-cols-[0.28fr_0.72fr]"
+              >
                 <div>
-                  <p className="text-sm font-bold tracking-[0.2em] text-[#697b56] uppercase">{job.company}</p>
+                  <p className="text-sm font-bold tracking-[0.2em] text-[#697b56] uppercase">
+                    {job.company}
+                  </p>
                   <h3
                     className="mt-3 text-2xl font-extrabold tracking-normal text-[#17231c]"
-                    style={{ fontFamily: "Avenir Next, Segoe UI, Helvetica Neue, sans-serif" }}
+                    style={{
+                      fontFamily:
+                        "Avenir Next, Segoe UI, Helvetica Neue, sans-serif",
+                    }}
                   >
                     {job.role}
                   </h3>
-                  <p className="mt-2 text-sm font-bold text-[#506052]">{job.dates}</p>
+                  <p className="mt-2 text-base font-bold text-[#506052]">
+                    {job.dates}
+                  </p>
                 </div>
                 <div>
-                  <p className="text-base leading-8 text-[#425247]">{job.body}</p>
+                  <ul className="space-y-3">
+                    {job.impact.map((item) => (
+                      <li
+                        key={item}
+                        className="flex gap-3 text-base leading-7 text-[#38493f]"
+                      >
+                        <span
+                          aria-hidden="true"
+                          className="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-[#697b56]"
+                        />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
                   <div className="mt-5 flex flex-wrap gap-2">
                     {job.stack.map((item) => (
-                      <span key={item} className="rounded-full bg-[#eef3f2] px-3 py-2 text-xs font-bold text-[#41575c] ring-1 ring-[#cfd8da]">
+                      <span
+                        key={item}
+                        className="rounded-full bg-[#eef3f2] px-3 py-2 text-xs font-bold text-[#41575c] ring-1 ring-[#cfd8da]"
+                      >
                         {item}
                       </span>
                     ))}
@@ -407,39 +462,69 @@ export default function HomePage() {
         <section id="work" className="space-y-8">
           <SectionHeader
             eyebrow="Key projects"
-            title="Projects that prove the full story."
-            body="These projects show the range I want recruiters to see: hackathon speed, stakeholder product work, current AI automation, systems integration, and programming fundamentals."
+            title="The fastest path to understanding my value."
+            body="These are arranged by recruiter relevance: award-winning AI finance work, sponsored frontend product execution, practical AI operations, then deeper systems integration."
           />
-          <div className="grid gap-5 lg:grid-cols-2">
-            {projects.map((project) => (
-              <article key={project.title} className="rounded-[8px] border border-[#d7ddcf] bg-white/72 p-6 shadow-[0_18px_50px_rgba(30,43,34,0.07)]">
+          <div className="grid gap-5 md:grid-cols-2">
+            {keyProjects.map((project, index) => (
+              <article
+                key={project.title}
+                className={`flex h-full flex-col rounded-[8px] border border-[#d7ddcf] bg-white/76 p-6 shadow-[0_10px_24px_rgba(30,43,34,0.05)] sm:p-7 ${index === 0 ? "ring-2 ring-[#b7c4aa]" : ""}`}
+              >
+                {project.priority ? (
+                  <p className="mb-4 w-fit rounded-full bg-[#eef3f2] px-3 py-1.5 text-xs font-extrabold tracking-[0.16em] text-[#41575c] uppercase ring-1 ring-[#cfd8da]">
+                    {project.priority}
+                  </p>
+                ) : null}
                 {project.image ? (
                   <div className="relative mb-5 aspect-[16/10] overflow-hidden rounded-[8px] border border-[#d7ddcf]">
                     <Image
                       src={project.image}
-                      alt={project.imageAlt}
+                      alt={
+                        project.imageAlt ?? `${project.title} project image.`
+                      }
                       fill
                       sizes="(min-width: 1024px) 42vw, 100vw"
                       className="object-cover"
                     />
                   </div>
                 ) : null}
-                <p className="text-sm font-bold tracking-[0.2em] text-[#697b56] uppercase">{project.eyebrow}</p>
+                <p className="text-sm font-bold tracking-[0.2em] text-[#697b56] uppercase">
+                  {project.eyebrow}
+                </p>
                 <h3
                   className="mt-3 text-3xl font-extrabold tracking-normal text-[#17231c]"
-                  style={{ fontFamily: "Avenir Next, Segoe UI, Helvetica Neue, sans-serif" }}
+                  style={{
+                    fontFamily:
+                      "Avenir Next, Segoe UI, Helvetica Neue, sans-serif",
+                  }}
                 >
                   {project.title}
                 </h3>
-                <p className="mt-4 text-base leading-7 text-[#425247]">{project.body}</p>
+                <p className="mt-4 text-base leading-7 text-[#425247]">
+                  {project.body}
+                </p>
                 <div className="mt-6 space-y-3 border-t border-[#dfe5d9] pt-5">
-                  <p className="text-sm leading-6 text-[#506052]"><strong className="text-[#17231c]">My role:</strong> {project.role}</p>
-                  <p className="text-sm leading-6 text-[#506052]"><strong className="text-[#17231c]">Why it matters:</strong> {project.proof}</p>
+                  <p className="text-base leading-7 text-[#506052]">
+                    <strong className="block text-sm font-extrabold tracking-[0.14em] text-[#17231c] uppercase">
+                      What I built
+                    </strong>
+                    {project.role}
+                  </p>
+                  <p className="text-base leading-7 text-[#506052]">
+                    <strong className="block text-sm font-extrabold tracking-[0.14em] text-[#17231c] uppercase">
+                      Result
+                    </strong>
+                    {project.result}
+                  </p>
                 </div>
                 {project.stack ? (
                   <div className="mt-5 flex flex-wrap gap-2">
                     {project.stack.map((item) => (
-                      <span key={item} className="rounded-full bg-[#eef3f2] px-3 py-2 text-xs font-bold text-[#41575c] ring-1 ring-[#cfd8da]">
+                      <span
+                        key={item}
+                        className="rounded-full bg-[#eef3f2] px-3 py-2 text-xs font-bold text-[#41575c] ring-1 ring-[#cfd8da]"
+                      >
                         {item}
                       </span>
                     ))}
@@ -450,7 +535,7 @@ export default function HomePage() {
                     href={project.link}
                     target="_blank"
                     rel="noreferrer"
-                    className="mt-5 inline-flex min-h-11 items-center rounded-full bg-[#17231c] px-4 text-sm font-bold !text-white"
+                    className="mt-6 inline-flex min-h-10 items-center justify-center self-center rounded-full bg-[#17231c] px-5 text-sm font-bold !text-white transition hover:-translate-y-0.5 hover:bg-[#25372d]"
                   >
                     {project.linkLabel}
                   </a>
@@ -458,42 +543,92 @@ export default function HomePage() {
               </article>
             ))}
           </div>
+
+          <div className="rounded-[8px] border border-[#d7c8b4] bg-[#ece2d2] p-6 sm:p-7">
+            <article className="grid gap-6 lg:grid-cols-[0.55fr_0.45fr] lg:items-start">
+              <div>
+                <p className="text-sm font-bold tracking-[0.22em] text-[#775b38] uppercase">
+                  Additional engineering proof
+                </p>
+                <h3
+                  className="mt-3 max-w-3xl text-3xl font-extrabold tracking-normal text-[#352b20]"
+                  style={{
+                    fontFamily:
+                      "Avenir Next, Segoe UI, Helvetica Neue, sans-serif",
+                  }}
+                >
+                  {pythonProject.title}
+                </h3>
+                <p className="mt-4 text-base leading-8 text-[#4f463a]">
+                  {pythonProject.body}
+                </p>
+                <p className="mt-4 text-base leading-7 text-[#5a4d3c]">
+                  <strong className="text-[#352b20]">Why it matters:</strong>{" "}
+                  {pythonProject.proof}
+                </p>
+                <a
+                  href={pythonProject.link}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mx-auto mt-6 flex min-h-10 w-fit items-center justify-center rounded-full bg-[#17231c] px-5 text-sm font-bold !text-white transition hover:-translate-y-0.5 hover:bg-[#25372d]"
+                >
+                  View Python project
+                </a>
+              </div>
+              <div className="rounded-[8px] border border-[#d7c8b4] bg-white/50 p-5">
+                <h4 className="text-lg font-extrabold leading-snug text-[#352b20]">
+                  Tech stack
+                </h4>
+                <div className="mt-5 flex flex-wrap gap-2">
+                  {pythonProject.stack.map((item) => (
+                    <span
+                      key={item}
+                      className="rounded-full bg-white/72 px-3 py-2 text-xs font-bold text-[#4f463a] ring-1 ring-[#d7c8b4]"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </article>
+          </div>
         </section>
 
         <section id="proof" className="space-y-8">
           <SectionHeader
             eyebrow="External validation"
-            title="Real people and organizations recognized the work."
-            body="The proof is close to the claim: a team win, official award evidence, LinkedIn recognition, sponsor validation, and stakeholder feedback."
+            title="Proof from outside the portfolio."
+            body="A compact set of signals from official event materials, public posts, sponsor recognition, and stakeholder feedback."
           />
-          <div className="grid gap-5 lg:grid-cols-2">
-            {proofBlocks.map((block) => (
-              <figure key={block.source} className="rounded-[8px] border border-[#cfd8da] bg-[#eef3f2] p-6">
-                {block.image ? (
-                  <div className="relative mb-5 aspect-[16/10] overflow-hidden rounded-[8px] border border-[#cfd8da] bg-white">
-                    <Image
-                      src={block.image}
-                      alt={block.imageAlt}
-                      fill
-                      sizes="(min-width: 1024px) 42vw, 100vw"
-                      className="object-cover"
-                    />
-                  </div>
-                ) : null}
-                <figcaption className="text-sm font-bold tracking-[0.2em] text-[#4e6c73] uppercase">{block.source}</figcaption>
-                <p className="mt-3 inline-flex rounded-full border border-[#b9c9ca] px-3 py-1 text-xs font-bold text-[#41575c]">
-                  {block.status}
-                </p>
-                <blockquote className="mt-4 text-2xl font-extrabold leading-snug tracking-normal text-[#17231c]">
+          <div className="grid gap-4 md:grid-cols-2">
+            {proofBlocks.map((block, index) => (
+              <figure
+                key={block.source}
+                className={`rounded-[8px] border p-6 shadow-[0_10px_24px_rgba(30,43,34,0.04)] ${
+                  index === 0
+                    ? "border-[#b7c4aa] bg-white/82"
+                    : "border-[#d7ddcf] bg-white/76"
+                }`}
+              >
+                <figcaption className="text-sm font-bold tracking-[0.18em] text-[#697b56] uppercase">
+                  {block.source}
+                </figcaption>
+                <blockquote
+                  className={`mt-4 font-extrabold leading-snug tracking-normal text-[#17231c] ${
+                    index === 0 ? "text-2xl" : "text-xl"
+                  }`}
+                >
                   &ldquo;{block.quote}&rdquo;
                 </blockquote>
-                <p className="mt-5 text-sm leading-6 text-[#506052]">{block.context}</p>
+                <p className="mt-4 text-base leading-7 text-[#506052]">
+                  {block.context}
+                </p>
                 {block.link ? (
                   <a
                     href={block.link}
                     target="_blank"
                     rel="noreferrer"
-                    className="mt-5 inline-flex min-h-11 items-center rounded-full bg-white px-4 text-sm font-bold !text-[#17231c] ring-1 ring-[#b9c9ca]"
+                    className="mx-auto mt-5 flex min-h-10 w-fit items-center justify-center rounded-full bg-[#17231c] px-5 text-sm font-bold !text-white transition hover:-translate-y-0.5 hover:bg-[#25372d]"
                   >
                     {block.linkLabel}
                   </a>
@@ -506,92 +641,71 @@ export default function HomePage() {
         <section id="skills" className="space-y-8">
           <SectionHeader
             eyebrow="Capabilities"
-            title="A practical stack of strengths, not a logo wall."
-            body="The point is not to list every tool I have touched. The point is to show how I help a team ship useful software across product, AI, backend, and systems work."
+            title="How I help a software team."
+            body="No logo wall. These are the working strengths that show up across my projects and professional experience."
           />
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {capabilities.map((capability) => (
-              <article key={capability.title} className="rounded-[8px] border border-[#d7ddcf] bg-white/72 p-5">
-                <h3 className="text-lg font-extrabold leading-snug text-[#17231c]">{capability.title}</h3>
-                <p className="mt-3 text-sm leading-6 text-[#506052]">{capability.body}</p>
+              <article
+                key={capability.title}
+                className="rounded-[8px] border border-[#d7ddcf] bg-white/76 p-6"
+              >
+                <h3 className="text-xl font-extrabold leading-snug text-[#17231c]">
+                  {capability.title}
+                </h3>
+                <p className="mt-3 text-base leading-7 text-[#506052]">
+                  {capability.body}
+                </p>
               </article>
             ))}
           </div>
         </section>
 
-        <section aria-labelledby="python-title" className="grid gap-8 rounded-[8px] border border-[#d7ddcf] bg-[#ece2d2] p-7 sm:p-9 lg:grid-cols-[0.58fr_0.42fr]">
+        <section
+          id="contact"
+          aria-labelledby="contact-title"
+          className="grid gap-8 rounded-[8px] bg-[#17231c] p-7 text-white shadow-[0_12px_28px_rgba(23,35,28,0.1)] sm:p-10 lg:grid-cols-[0.68fr_0.32fr] lg:items-end"
+        >
           <div>
-            <p className="text-sm font-bold tracking-[0.22em] text-[#775b38] uppercase">Python proof</p>
-            <h2
-              id="python-title"
-              className="mt-3 max-w-3xl text-3xl font-extrabold tracking-normal"
-              style={{ fontFamily: "Avenir Next, Segoe UI, Helvetica Neue, sans-serif" }}
-            >
-              {pythonProject.title}: a tested Python REPL application.
-            </h2>
-            <p className="mt-4 max-w-3xl text-base leading-8 text-[#4f463a]">
-              {pythonProject.body}
+            <p className="text-sm font-bold tracking-[0.22em] text-[#c8d6bb] uppercase">
+              Contact
             </p>
-            <p className="mt-4 max-w-3xl text-sm leading-7 text-[#5a4d3c]">
-              {pythonProject.proof}
-            </p>
-            <a
-              href={pythonProject.link}
-              target="_blank"
-              rel="noreferrer"
-              className="mt-6 inline-flex min-h-11 items-center rounded-full bg-[#17231c] px-4 text-sm font-bold !text-white"
-            >
-              View Python project
-            </a>
-          </div>
-          <div className="space-y-5">
-            <div className="rounded-[8px] border border-[#d7c8b4] bg-white/62 p-5">
-              <h3 className="text-lg font-extrabold leading-snug text-[#352b20]">What it shows</h3>
-              <ul className="mt-4 space-y-3">
-                {pythonProject.details.map((item) => (
-                  <li key={item} className="text-sm leading-6 text-[#5a4d3c]">
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="rounded-[8px] border border-[#d7c8b4] bg-white/62 p-5">
-              <h3 className="text-lg font-extrabold leading-snug text-[#352b20]">Tech stack</h3>
-              <div className="mt-4 flex flex-wrap gap-2">
-                {pythonProject.stack.map((item) => (
-                  <span key={item} className="rounded-full bg-white/72 px-3 py-2 text-xs font-bold text-[#4f463a] ring-1 ring-[#d7c8b4]">
-                    {item}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="contact" aria-labelledby="contact-title" className="grid gap-8 rounded-[8px] bg-[#17231c] p-7 text-white sm:p-10 lg:grid-cols-[0.7fr_0.3fr] lg:items-end">
-          <div>
-            <p className="text-sm font-bold tracking-[0.22em] text-[#c8d6bb] uppercase">Contact</p>
             <h2
               id="contact-title"
               className="mt-3 max-w-3xl text-4xl font-extrabold tracking-normal"
-              style={{ fontFamily: "Avenir Next, Segoe UI, Helvetica Neue, sans-serif" }}
+              style={{
+                fontFamily: "Avenir Next, Segoe UI, Helvetica Neue, sans-serif",
+              }}
             >
               Ready to help a team ship useful software with care.
             </h2>
             <p className="mt-4 max-w-2xl text-base leading-8 text-[#dce5d7]">
-              I&apos;m looking for a team that moves quickly, values user-focused engineering, and
-              needs someone who can contribute across frontend, backend, AI automation, and
-              systems integration.
+              I&apos;m looking for full-stack, frontend, backend, AI automation,
+              and software engineering opportunities where I can contribute to
+              real products.
             </p>
           </div>
-          <div className="flex flex-col gap-3 text-sm font-bold">
-            <a className="rounded-full bg-white px-5 py-3 text-center !text-[#17231c]" href="mailto:anthonyquispilaya@gmail.com">
+          <div className="grid gap-3 text-sm font-bold sm:grid-cols-3 lg:grid-cols-1">
+            <a
+              className="rounded-full bg-white px-5 py-3 text-center !text-[#17231c] transition hover:-translate-y-0.5"
+              href="mailto:anthonyquispilaya@gmail.com"
+            >
               Email me
             </a>
-            <a className="rounded-full border border-white/30 px-5 py-3 text-center !text-white" href="https://www.linkedin.com/in/anthony-quispilaya/" rel="noreferrer" target="_blank">
+            <a
+              className="rounded-full border border-white/30 px-5 py-3 text-center !text-white transition hover:-translate-y-0.5 hover:bg-white/10"
+              href="https://www.linkedin.com/in/anthony-quispilaya/"
+              rel="noreferrer"
+              target="_blank"
+            >
               LinkedIn
             </a>
-            <a className="rounded-full border border-white/30 px-5 py-3 text-center !text-white" href="https://github.com/Anthony-Quispilaya" rel="noreferrer" target="_blank">
+            <a
+              className="rounded-full border border-white/30 px-5 py-3 text-center !text-white transition hover:-translate-y-0.5 hover:bg-white/10"
+              href="https://github.com/Anthony-Quispilaya"
+              rel="noreferrer"
+              target="_blank"
+            >
               GitHub
             </a>
           </div>
@@ -604,8 +718,12 @@ export default function HomePage() {
 function ProofStat({ label, value }: { label: string; value: string }) {
   return (
     <div className="rounded-[8px] border border-[#d7ddcf] bg-white/72 p-4">
-      <p className="text-xs font-bold tracking-[0.18em] text-[#697b56] uppercase">{label}</p>
-      <p className="mt-2 text-sm font-extrabold leading-5 text-[#17231c]">{value}</p>
+      <p className="text-xs font-bold tracking-[0.18em] text-[#697b56] uppercase">
+        {label}
+      </p>
+      <p className="mt-2 text-base font-extrabold leading-6 text-[#17231c]">
+        {value}
+      </p>
     </div>
   );
 }
@@ -621,14 +739,20 @@ function SectionHeader({
 }) {
   return (
     <div className="max-w-3xl">
-      <p className="text-sm font-bold tracking-[0.22em] text-[#697b56] uppercase">{eyebrow}</p>
+      <p className="text-sm font-bold tracking-[0.22em] text-[#697b56] uppercase">
+        {eyebrow}
+      </p>
       <h2
         className="mt-3 text-4xl font-extrabold tracking-normal text-[#17231c]"
-        style={{ fontFamily: "Avenir Next, Segoe UI, Helvetica Neue, sans-serif" }}
+        style={{
+          fontFamily: "Avenir Next, Segoe UI, Helvetica Neue, sans-serif",
+        }}
       >
         {title}
       </h2>
-      <p className="mt-4 text-base leading-8 text-[#506052]">{body}</p>
+      <p className="mt-4 text-base leading-8 text-[#506052] sm:text-lg">
+        {body}
+      </p>
     </div>
   );
 }

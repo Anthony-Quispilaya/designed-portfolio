@@ -40,6 +40,25 @@ I tested sponsor API tools, debugged integration issues, supported backend archi
 
 ### Evidence Links
 
+### Current External Validation Cards
+
+The live portfolio uses a text-only proof section. Images are intentionally excluded from this section to keep the evidence readable and avoid awkward card layouts.
+
+Display order:
+
+1. **Hackathon Win**
+   - Quote: "Best Business & Enterprise Hack"
+   - Context: HackPrinceton 2026 selected LEGR for the business and enterprise track award, with LEGR named in the official winner materials.
+2. **Tapyoca Sponsor Feedback**
+   - Quote: "You've been extremely proactive in your work with us thus far."
+   - Context: Feedback from Myron Paes, Head Product Manager at Tapyoca, recognizing initiative on the sponsored capstone product.
+3. **NJIT Recognition**
+   - Quote: "NJIT publicly recognized the LEGR team."
+   - Context: The post connects the project to both awards and gives the achievement institutional visibility.
+4. **Enter Pro Recognition**
+   - Quote: "Best Use of Enter Pro"
+   - Context: Sponsor-track validation for using Enter Pro in a practical AI finance operations workflow.
+
 #### NJIT LinkedIn Recognition
 
 https://www.linkedin.com/feed/update/urn:li:activity:7457397339591307264/?utm_source=share&utm_medium=member_desktop&rcm=ACoAADUojL0BnvhdHtVAObhuMfPEp-F440dUqac
@@ -49,7 +68,14 @@ NJIT congratulated senior IT majors Sadman Mazumder and Anthony Quispilaya for w
 Embedded post:
 
 ```html
-<iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7455683533395869697" height="775" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+<iframe
+  src="https://www.linkedin.com/embed/feed/update/urn:li:share:7455683533395869697"
+  height="775"
+  width="504"
+  frameborder="0"
+  allowfullscreen=""
+  title="Embedded post"
+></iframe>
 ```
 
 #### Enter Pro LinkedIn Recognition
@@ -61,7 +87,14 @@ Enter Pro congratulated Anthony Quispilaya and the LEGR team for winning 1st Pla
 Embedded post:
 
 ```html
-<iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7456670004185436160" height="2248" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+<iframe
+  src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7456670004185436160"
+  height="2248"
+  width="504"
+  frameborder="0"
+  allowfullscreen=""
+  title="Embedded post"
+></iframe>
 ```
 
 #### Enter Pro Forum Proof
@@ -72,9 +105,13 @@ Enter Pro posted LEGR's Best Use of Enter Pro recognition on its own forum/site,
 
 ### Assets
 
+Hero/carousel assets:
+
 - `public/assets/DSCF4249.JPG`
 - `public/assets/HackPrinceton Winner.jpg`
 - `public/assets/LEGR WINNER.png`
+
+The External Validation section no longer displays these images directly; they remain useful for the hero carousel and supporting project proof.
 
 ## Professional Experience
 
