@@ -45,6 +45,56 @@ button:focus-visible {
   outline-offset: 4px;
 }
 
+.scroll-reveal {
+  --reveal-delay: 0ms;
+  opacity: 0;
+  transform: translateY(1.35rem);
+  transition:
+    opacity 620ms ease,
+    transform 620ms ease;
+  transition-delay: var(--reveal-delay);
+  will-change: opacity, transform;
+}
+
+.scroll-reveal--sm {
+  transform: translateY(0.75rem);
+}
+
+.scroll-reveal--none {
+  transform: none;
+}
+
+.scroll-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-pill {
+  opacity: 0;
+  transform: translateY(0.35rem);
+  transition:
+    opacity 420ms ease,
+    transform 420ms ease;
+}
+
+.scroll-reveal.is-visible .reveal-pill {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .scroll-reveal,
+  .reveal-pill {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
 * {
   box-sizing: border-box;
 }

@@ -35,6 +35,7 @@ Reliable full-stack engineer building useful products and practical AI systems.
 - Buttons in project cards should be compact, centered, and clearly clickable.
 - External Validation should be text-first proof, not image-heavy. Images were removed from that section because they created awkward layouts and distracted from the evidence.
 - Calculator Application should support the main story, not compete with flagship projects.
+- Scrollytelling should stay subtle: fade/slide reveals, staggered cards, active nav state, and scroll progress only. Do not introduce flashy motion, 3D effects, heavy glows, or a new visual style.
 
 ## Professional Experience
 
@@ -102,6 +103,11 @@ Reliable full-stack engineer building useful products and practical AI systems.
 - Python Calculator sits below Key Projects in an "Additional engineering proof" block.
 - Project card CTAs are centered and compact.
 - Heavy right-side shadow effects were reduced on the hero proof card, carousel caption, repeated cards, and contact CTA.
+- Scrollytelling is implemented with lightweight CSS transitions plus Intersection Observer, not a heavy animation library.
+- `components/animations/reveal.tsx` provides reusable section/card reveal behavior.
+- `components/animations/scroll-progress.tsx` provides the top scroll progress bar.
+- `components/portfolio-header.tsx` owns the sticky header and active section state.
+- Reveals respect `prefers-reduced-motion` in `app/globals.css`.
 
 ## Assets
 

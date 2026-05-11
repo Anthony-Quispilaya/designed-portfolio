@@ -1,7 +1,9 @@
+import { Reveal } from "@/components/animations/reveal";
+import { ScrollProgress } from "@/components/animations/scroll-progress";
 import { HackPrincetonCarousel } from "@/components/hackprinceton-carousel";
+import { PortfolioHeader } from "@/components/portfolio-header";
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Anthony Quispilaya | Full-Stack Engineer",
@@ -266,26 +268,8 @@ export default function HomePage() {
         Skip to content
       </a>
 
-      <header className="sticky inset-x-0 top-0 z-50 border-b border-[#d7ddcf]/80 bg-[#f7f3ec]/92 backdrop-blur-md">
-        <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-5 py-4 sm:px-8 lg:px-10">
-          <Link
-            href="/"
-            className="text-sm font-bold tracking-[0.18em] !text-[#24352b] uppercase"
-          >
-            Anthony Quispilaya
-          </Link>
-          <nav
-            aria-label="Portfolio sections"
-            className="hidden gap-5 text-sm font-semibold !text-[#4b5966] sm:flex"
-          >
-            <a href="#experience">Experience</a>
-            <a href="#work">Work</a>
-            <a href="#proof">Proof</a>
-            <a href="#skills">Skills</a>
-            <a href="#contact">Contact</a>
-          </nav>
-        </div>
-      </header>
+      <ScrollProgress />
+      <PortfolioHeader />
 
       <div
         id="content"
@@ -293,244 +277,270 @@ export default function HomePage() {
       >
         <section className="grid gap-10 pt-6 lg:min-h-[calc(100svh-6rem)] lg:grid-cols-[1fr_0.96fr] lg:items-center lg:pt-0">
           <div className="min-w-0 max-w-3xl">
-            <p className="text-sm font-bold tracking-[0.2em] text-[#697b56] uppercase">
-              Full-stack engineer for practical product teams
-            </p>
-            <h1
-              className="mt-5 max-w-4xl text-4xl leading-[1.04] font-extrabold tracking-normal text-[#17231c] sm:text-6xl lg:text-7xl"
-              style={{
-                fontFamily: "Avenir Next, Segoe UI, Helvetica Neue, sans-serif",
-              }}
-            >
-              Reliable full-stack engineer building useful products and
-              practical AI systems.
-            </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-[#394a40] sm:text-xl sm:leading-9">
-              I turn product ideas into working software across frontend,
-              backend, AI workflows, and systems integration. The proof: a
-              HackPrinceton-winning AI finance platform, a sponsored capstone
-              product, and infrastructure-heavy full-stack work.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <a
-                href="#work"
-                className="inline-flex min-h-12 items-center justify-center rounded-full bg-[#17231c] px-6 text-base font-bold !text-white shadow-[0_8px_18px_rgba(23,35,28,0.12)] transition hover:-translate-y-0.5 hover:bg-[#25372d]"
+            <Reveal delay={40}>
+              <p className="text-sm font-bold tracking-[0.2em] text-[#697b56] uppercase">
+                Full-stack engineer for practical product teams
+              </p>
+            </Reveal>
+            <Reveal delay={110}>
+              <h1
+                className="mt-5 max-w-4xl text-4xl leading-[1.04] font-extrabold tracking-normal text-[#17231c] sm:text-6xl lg:text-7xl"
+                style={{
+                  fontFamily:
+                    "Avenir Next, Segoe UI, Helvetica Neue, sans-serif",
+                }}
               >
-                View Projects
-              </a>
-              <a
-                href="#contact"
-                className="inline-flex min-h-12 items-center justify-center rounded-full border border-[#aeb9a4] bg-white/78 px-6 text-base font-bold !text-[#17231c] transition hover:-translate-y-0.5 hover:bg-white"
-              >
-                Contact Me
-              </a>
-            </div>
-            <div className="mt-8 flex flex-wrap gap-2.5">
-              {[
-                "Hackathon Winner",
-                "Capstone Frontend Developer",
-                "AI + Full-Stack Projects",
-              ].map((item) => (
-                <span
-                  key={item}
-                  className="rounded-full border border-[#d1d9ca] bg-white/70 px-4 py-2 text-sm font-extrabold text-[#344238]"
+                Reliable full-stack engineer building useful products and
+                practical AI systems.
+              </h1>
+            </Reveal>
+            <Reveal delay={180}>
+              <p className="mt-6 max-w-2xl text-lg leading-8 text-[#394a40] sm:text-xl sm:leading-9">
+                I turn product ideas into working software across frontend,
+                backend, AI workflows, and systems integration. The proof: a
+                HackPrinceton-winning AI finance platform, a sponsored capstone
+                product, and infrastructure-heavy full-stack work.
+              </p>
+            </Reveal>
+            <Reveal delay={250}>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <a
+                  href="#work"
+                  className="inline-flex min-h-12 items-center justify-center rounded-full bg-[#17231c] px-6 text-base font-bold !text-white shadow-[0_8px_18px_rgba(23,35,28,0.12)] transition hover:-translate-y-0.5 hover:bg-[#25372d]"
                 >
-                  {item}
-                </span>
-              ))}
-            </div>
+                  View Projects
+                </a>
+                <a
+                  href="#contact"
+                  className="inline-flex min-h-12 items-center justify-center rounded-full border border-[#aeb9a4] bg-white/78 px-6 text-base font-bold !text-[#17231c] transition hover:-translate-y-0.5 hover:bg-white"
+                >
+                  Contact Me
+                </a>
+              </div>
+            </Reveal>
+            <Reveal delay={320}>
+              <div className="mt-8 flex flex-wrap gap-2.5">
+                {[
+                  "Hackathon Winner",
+                  "Capstone Frontend Developer",
+                  "AI + Full-Stack Projects",
+                ].map((item) => (
+                  <span
+                    key={item}
+                    className="rounded-full border border-[#d1d9ca] bg-white/70 px-4 py-2 text-sm font-extrabold text-[#344238]"
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </Reveal>
           </div>
 
-          <div className="min-w-0 max-w-full overflow-hidden rounded-[8px] border border-[#cdd7d9] bg-[#e9eff0] p-3 shadow-[0_12px_28px_rgba(30,43,34,0.08)] sm:p-4">
-            <HackPrincetonCarousel slides={hackPrincetonCarousel} />
-            <div className="grid gap-3 border-x border-b border-white/70 bg-white/82 p-4 sm:grid-cols-3">
-              <ProofStat
-                label="HackPrinceton"
-                value="Best Business & Enterprise Hack"
-              />
-              <ProofStat label="Sponsor track" value="Best Use of Enter Pro" />
-              <ProofStat label="Build window" value="Shipped in 36 hours" />
+          <Reveal delay={260}>
+            <div className="min-w-0 max-w-full overflow-hidden rounded-[8px] border border-[#cdd7d9] bg-[#e9eff0] p-3 shadow-[0_12px_28px_rgba(30,43,34,0.08)] sm:p-4">
+              <HackPrincetonCarousel slides={hackPrincetonCarousel} />
+              <div className="grid gap-3 border-x border-b border-white/70 bg-white/82 p-4 sm:grid-cols-3">
+                <ProofStat
+                  label="HackPrinceton"
+                  value="Best Business & Enterprise Hack"
+                />
+                <ProofStat
+                  label="Sponsor track"
+                  value="Best Use of Enter Pro"
+                />
+                <ProofStat label="Build window" value="Shipped in 36 hours" />
+              </div>
             </div>
-          </div>
+          </Reveal>
         </section>
 
         <section
           aria-labelledby="about-title"
           className="grid gap-8 border-y border-[#d7ddcf] py-12 lg:grid-cols-[0.3fr_0.46fr_0.24fr] lg:items-center"
         >
-          <div>
-            <p className="text-sm font-bold tracking-[0.2em] text-[#697b56] uppercase">
-              About
-            </p>
-            <h2
-              id="about-title"
-              className="mt-3 text-3xl leading-tight font-extrabold tracking-normal"
-              style={{
-                fontFamily: "Avenir Next, Segoe UI, Helvetica Neue, sans-serif",
-              }}
-            >
-              Fast builder habits, grounded engineering judgment.
-            </h2>
-          </div>
-          <p className="max-w-3xl text-lg leading-8 text-[#33433a] sm:text-xl sm:leading-9">
-            I care about software that works for the person using it: clear
-            flows, real data, reliable integrations, and fewer repeated tasks.
-            My strongest work sits where product execution meets AI workflows
-            and backend systems.
-          </p>
-          <figure className="max-w-xs overflow-hidden rounded-[8px] border border-[#d7ddcf] bg-white/72 p-3 shadow-[0_10px_24px_rgba(30,43,34,0.05)]">
-            <div className="relative aspect-square overflow-hidden rounded-[8px] border border-[#d7ddcf] bg-[#e9eff0]">
-              <Image
-                src="/assets/headshot_square.jpg"
-                alt="Headshot of Anthony Quispilaya."
-                fill
-                sizes="(min-width: 1024px) 22vw, 280px"
-                className="object-cover"
-              />
+          <Reveal>
+            <div>
+              <p className="text-sm font-bold tracking-[0.2em] text-[#697b56] uppercase">
+                About
+              </p>
+              <h2
+                id="about-title"
+                className="mt-3 text-3xl leading-tight font-extrabold tracking-normal"
+                style={{
+                  fontFamily:
+                    "Avenir Next, Segoe UI, Helvetica Neue, sans-serif",
+                }}
+              >
+                Fast builder habits, grounded engineering judgment.
+              </h2>
             </div>
-            <figcaption className="px-1 pt-4">
-              <p className="text-base font-extrabold text-[#17231c]">
-                Anthony Quispilaya
-              </p>
-              <p className="mt-1 text-sm leading-6 text-[#506052]">
-                Full-stack engineer building useful products and practical AI.
-              </p>
-            </figcaption>
-          </figure>
+          </Reveal>
+          <Reveal delay={100}>
+            <p className="max-w-3xl text-lg leading-8 text-[#33433a] sm:text-xl sm:leading-9">
+              I care about software that works for the person using it: clear
+              flows, real data, reliable integrations, and fewer repeated tasks.
+              My strongest work sits where product execution meets AI workflows
+              and backend systems.
+            </p>
+          </Reveal>
+          <Reveal delay={180}>
+            <figure className="max-w-xs overflow-hidden rounded-[8px] border border-[#d7ddcf] bg-white/72 p-3 shadow-[0_10px_24px_rgba(30,43,34,0.05)]">
+              <div className="relative aspect-square overflow-hidden rounded-[8px] border border-[#d7ddcf] bg-[#e9eff0]">
+                <Image
+                  src="/assets/headshot_square.jpg"
+                  alt="Headshot of Anthony Quispilaya."
+                  fill
+                  sizes="(min-width: 1024px) 22vw, 280px"
+                  className="object-cover"
+                />
+              </div>
+              <figcaption className="px-1 pt-4">
+                <p className="text-base font-extrabold text-[#17231c]">
+                  Anthony Quispilaya
+                </p>
+                <p className="mt-1 text-sm leading-6 text-[#506052]">
+                  Full-stack engineer building useful products and practical AI.
+                </p>
+              </figcaption>
+            </figure>
+          </Reveal>
         </section>
 
         <section id="experience" className="space-y-8">
-          <SectionHeader
-            eyebrow="Professional experience"
-            title="Product work plus real support discipline."
-            body="I bring frontend product execution from Tapyoca and troubleshooting instincts from Quest Technologies. That mix makes me useful on teams that need both shipping speed and reliability."
-          />
+          <Reveal>
+            <SectionHeader
+              eyebrow="Professional experience"
+              title="Product work plus real support discipline."
+              body="I bring frontend product execution from Tapyoca and troubleshooting instincts from Quest Technologies. That mix makes me useful on teams that need both shipping speed and reliability."
+            />
+          </Reveal>
           <div className="space-y-5">
-            {experience.map((job) => (
-              <article
-                key={`${job.role}-${job.company}`}
-                className="grid gap-6 rounded-[8px] border border-[#d7ddcf] bg-white/76 p-6 shadow-[0_10px_24px_rgba(30,43,34,0.05)] sm:p-7 lg:grid-cols-[0.28fr_0.72fr]"
-              >
-                <div>
-                  <p className="text-sm font-bold tracking-[0.2em] text-[#697b56] uppercase">
-                    {job.company}
-                  </p>
-                  <h3
-                    className="mt-3 text-2xl font-extrabold tracking-normal text-[#17231c]"
-                    style={{
-                      fontFamily:
-                        "Avenir Next, Segoe UI, Helvetica Neue, sans-serif",
-                    }}
-                  >
-                    {job.role}
-                  </h3>
-                  <p className="mt-2 text-base font-bold text-[#506052]">
-                    {job.dates}
-                  </p>
-                </div>
-                <div>
-                  <ul className="space-y-3">
-                    {job.impact.map((item) => (
-                      <li
-                        key={item}
-                        className="flex gap-3 text-base leading-7 text-[#38493f]"
-                      >
-                        <span
-                          aria-hidden="true"
-                          className="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-[#697b56]"
-                        />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <div className="mt-5 flex flex-wrap gap-2">
-                    {job.stack.map((item) => (
-                      <span
-                        key={item}
-                        className="rounded-full bg-[#eef3f2] px-3 py-2 text-xs font-bold text-[#41575c] ring-1 ring-[#cfd8da]"
-                      >
-                        {item}
-                      </span>
-                    ))}
+            {experience.map((job, index) => (
+              <Reveal key={`${job.role}-${job.company}`} delay={index * 120}>
+                <article className="grid gap-6 rounded-[8px] border border-[#d7ddcf] bg-white/76 p-6 shadow-[0_10px_24px_rgba(30,43,34,0.05)] sm:p-7 lg:grid-cols-[0.28fr_0.72fr]">
+                  <div>
+                    <p className="text-sm font-bold tracking-[0.2em] text-[#697b56] uppercase">
+                      {job.company}
+                    </p>
+                    <h3
+                      className="mt-3 text-2xl font-extrabold tracking-normal text-[#17231c]"
+                      style={{
+                        fontFamily:
+                          "Avenir Next, Segoe UI, Helvetica Neue, sans-serif",
+                      }}
+                    >
+                      {job.role}
+                    </h3>
+                    <p className="mt-2 text-base font-bold text-[#506052]">
+                      {job.dates}
+                    </p>
                   </div>
-                </div>
-              </article>
+                  <div>
+                    <ul className="space-y-3">
+                      {job.impact.map((item) => (
+                        <li
+                          key={item}
+                          className="flex gap-3 text-base leading-7 text-[#38493f]"
+                        >
+                          <span
+                            aria-hidden="true"
+                            className="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-[#697b56]"
+                          />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="mt-5 flex flex-wrap gap-2">
+                      {job.stack.map((item) => (
+                        <span
+                          key={item}
+                          className="rounded-full bg-[#eef3f2] px-3 py-2 text-xs font-bold text-[#41575c] ring-1 ring-[#cfd8da]"
+                        >
+                          {item}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </article>
+              </Reveal>
             ))}
           </div>
         </section>
 
         <section id="work" className="space-y-8">
-          <SectionHeader
-            eyebrow="Key projects"
-            title="The fastest path to understanding my value."
-            body="These are arranged by recruiter relevance: award-winning AI finance work, sponsored frontend product execution, practical AI operations, then deeper systems integration."
-          />
+          <Reveal>
+            <SectionHeader
+              eyebrow="Key projects"
+              title="The fastest path to understanding my value."
+              body="These are arranged by recruiter relevance: award-winning AI finance work, sponsored frontend product execution, practical AI operations, then deeper systems integration."
+            />
+          </Reveal>
           <div className="grid gap-5 md:grid-cols-2">
             {keyProjects.map((project, index) => (
-              <article
-                key={project.title}
-                className={`flex h-full flex-col rounded-[8px] border border-[#d7ddcf] bg-white/76 p-6 shadow-[0_10px_24px_rgba(30,43,34,0.05)] sm:p-7 ${index === 0 ? "ring-2 ring-[#b7c4aa]" : ""}`}
-              >
-                {project.priority ? (
-                  <p className="mb-4 w-fit rounded-full bg-[#eef3f2] px-3 py-1.5 text-xs font-extrabold tracking-[0.16em] text-[#41575c] uppercase ring-1 ring-[#cfd8da]">
-                    {project.priority}
-                  </p>
-                ) : null}
-                {project.image ? (
-                  <div className="relative mb-5 aspect-[16/10] overflow-hidden rounded-[8px] border border-[#d7ddcf]">
-                    <Image
-                      src={project.image}
-                      alt={
-                        project.imageAlt ?? `${project.title} project image.`
-                      }
-                      fill
-                      sizes="(min-width: 1024px) 42vw, 100vw"
-                      className="object-cover"
-                    />
-                  </div>
-                ) : null}
-                <p className="text-sm font-bold tracking-[0.2em] text-[#697b56] uppercase">
-                  {project.eyebrow}
-                </p>
-                <h3
-                  className="mt-3 text-3xl font-extrabold tracking-normal text-[#17231c]"
-                  style={{
-                    fontFamily:
-                      "Avenir Next, Segoe UI, Helvetica Neue, sans-serif",
-                  }}
+              <Reveal key={project.title} delay={index * 120}>
+                <article
+                  className={`flex h-full flex-col rounded-[8px] border border-[#d7ddcf] bg-white/76 p-6 shadow-[0_10px_24px_rgba(30,43,34,0.05)] sm:p-7 ${index === 0 ? "ring-2 ring-[#b7c4aa]" : ""}`}
                 >
-                  {project.title}
-                </h3>
-                <p className="mt-4 text-base leading-7 text-[#425247]">
-                  {project.body}
-                </p>
-                <div className="mt-6 space-y-3 border-t border-[#dfe5d9] pt-5">
-                  <p className="text-base leading-7 text-[#506052]">
-                    <strong className="block text-sm font-extrabold tracking-[0.14em] text-[#17231c] uppercase">
-                      What I built
-                    </strong>
-                    {project.role}
+                  {project.priority ? (
+                    <p className="mb-4 w-fit rounded-full bg-[#eef3f2] px-3 py-1.5 text-xs font-extrabold tracking-[0.16em] text-[#41575c] uppercase ring-1 ring-[#cfd8da]">
+                      {project.priority}
+                    </p>
+                  ) : null}
+                  {project.image ? (
+                    <div className="relative mb-5 aspect-[16/10] overflow-hidden rounded-[8px] border border-[#d7ddcf]">
+                      <Image
+                        src={project.image}
+                        alt={
+                          project.imageAlt ?? `${project.title} project image.`
+                        }
+                        fill
+                        sizes="(min-width: 1024px) 42vw, 100vw"
+                        className="object-cover"
+                      />
+                    </div>
+                  ) : null}
+                  <p className="text-sm font-bold tracking-[0.2em] text-[#697b56] uppercase">
+                    {project.eyebrow}
                   </p>
-                  <p className="text-base leading-7 text-[#506052]">
-                    <strong className="block text-sm font-extrabold tracking-[0.14em] text-[#17231c] uppercase">
-                      Result
-                    </strong>
-                    {project.result}
+                  <h3
+                    className="mt-3 text-3xl font-extrabold tracking-normal text-[#17231c]"
+                    style={{
+                      fontFamily:
+                        "Avenir Next, Segoe UI, Helvetica Neue, sans-serif",
+                    }}
+                  >
+                    {project.title}
+                  </h3>
+                  <p className="mt-4 text-base leading-7 text-[#425247]">
+                    {project.body}
                   </p>
-                </div>
-                {project.stack ? (
+                  <div className="mt-6 space-y-3 border-t border-[#dfe5d9] pt-5">
+                    <p className="text-base leading-7 text-[#506052]">
+                      <strong className="block text-sm font-extrabold tracking-[0.14em] text-[#17231c] uppercase">
+                        What I built
+                      </strong>
+                      {project.role}
+                    </p>
+                    <p className="text-base leading-7 text-[#506052]">
+                      <strong className="block text-sm font-extrabold tracking-[0.14em] text-[#17231c] uppercase">
+                        Result
+                      </strong>
+                      {project.result}
+                    </p>
+                  </div>
                   <div className="mt-5 flex flex-wrap gap-2">
-                    {project.stack.map((item) => (
+                    {project.stack.map((item, stackIndex) => (
                       <span
                         key={item}
-                        className="rounded-full bg-[#eef3f2] px-3 py-2 text-xs font-bold text-[#41575c] ring-1 ring-[#cfd8da]"
+                        className="reveal-pill rounded-full bg-[#eef3f2] px-3 py-2 text-xs font-bold text-[#41575c] ring-1 ring-[#cfd8da]"
+                        style={{
+                          transitionDelay: `${160 + stackIndex * 28}ms`,
+                        }}
                       >
                         {item}
                       </span>
                     ))}
                   </div>
-                ) : null}
-                {project.link ? (
                   <a
                     href={project.link}
                     target="_blank"
@@ -539,177 +549,194 @@ export default function HomePage() {
                   >
                     {project.linkLabel}
                   </a>
-                ) : null}
-              </article>
+                </article>
+              </Reveal>
             ))}
           </div>
 
-          <div className="rounded-[8px] border border-[#d7c8b4] bg-[#ece2d2] p-6 sm:p-7">
-            <article className="grid gap-6 lg:grid-cols-[0.55fr_0.45fr] lg:items-start">
-              <div>
-                <p className="text-sm font-bold tracking-[0.22em] text-[#775b38] uppercase">
-                  Additional engineering proof
-                </p>
-                <h3
-                  className="mt-3 max-w-3xl text-3xl font-extrabold tracking-normal text-[#352b20]"
-                  style={{
-                    fontFamily:
-                      "Avenir Next, Segoe UI, Helvetica Neue, sans-serif",
-                  }}
-                >
-                  {pythonProject.title}
-                </h3>
-                <p className="mt-4 text-base leading-8 text-[#4f463a]">
-                  {pythonProject.body}
-                </p>
-                <p className="mt-4 text-base leading-7 text-[#5a4d3c]">
-                  <strong className="text-[#352b20]">Why it matters:</strong>{" "}
-                  {pythonProject.proof}
-                </p>
-                <a
-                  href={pythonProject.link}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="mx-auto mt-6 flex min-h-10 w-fit items-center justify-center rounded-full bg-[#17231c] px-5 text-sm font-bold !text-white transition hover:-translate-y-0.5 hover:bg-[#25372d]"
-                >
-                  View Python project
-                </a>
-              </div>
-              <div className="rounded-[8px] border border-[#d7c8b4] bg-white/50 p-5">
-                <h4 className="text-lg font-extrabold leading-snug text-[#352b20]">
-                  Tech stack
-                </h4>
-                <div className="mt-5 flex flex-wrap gap-2">
-                  {pythonProject.stack.map((item) => (
-                    <span
-                      key={item}
-                      className="rounded-full bg-white/72 px-3 py-2 text-xs font-bold text-[#4f463a] ring-1 ring-[#d7c8b4]"
-                    >
-                      {item}
-                    </span>
-                  ))}
+          <Reveal delay={120}>
+            <div className="rounded-[8px] border border-[#d7c8b4] bg-[#ece2d2] p-6 sm:p-7">
+              <article className="grid gap-6 lg:grid-cols-[0.55fr_0.45fr] lg:items-start">
+                <div>
+                  <p className="text-sm font-bold tracking-[0.22em] text-[#775b38] uppercase">
+                    Additional engineering proof
+                  </p>
+                  <h3
+                    className="mt-3 max-w-3xl text-3xl font-extrabold tracking-normal text-[#352b20]"
+                    style={{
+                      fontFamily:
+                        "Avenir Next, Segoe UI, Helvetica Neue, sans-serif",
+                    }}
+                  >
+                    {pythonProject.title}
+                  </h3>
+                  <p className="mt-4 text-base leading-8 text-[#4f463a]">
+                    {pythonProject.body}
+                  </p>
+                  <p className="mt-4 text-base leading-7 text-[#5a4d3c]">
+                    <strong className="text-[#352b20]">Why it matters:</strong>{" "}
+                    {pythonProject.proof}
+                  </p>
+                  <a
+                    href={pythonProject.link}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mx-auto mt-6 flex min-h-10 w-fit items-center justify-center rounded-full bg-[#17231c] px-5 text-sm font-bold !text-white transition hover:-translate-y-0.5 hover:bg-[#25372d]"
+                  >
+                    View Python project
+                  </a>
                 </div>
-              </div>
-            </article>
-          </div>
+                <div className="rounded-[8px] border border-[#d7c8b4] bg-white/50 p-5">
+                  <h4 className="text-lg font-extrabold leading-snug text-[#352b20]">
+                    Tech stack
+                  </h4>
+                  <div className="mt-5 flex flex-wrap gap-2">
+                    {pythonProject.stack.map((item) => (
+                      <span
+                        key={item}
+                        className="rounded-full bg-white/72 px-3 py-2 text-xs font-bold text-[#4f463a] ring-1 ring-[#d7c8b4]"
+                      >
+                        {item}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </article>
+            </div>
+          </Reveal>
         </section>
 
         <section id="proof" className="space-y-8">
-          <SectionHeader
-            eyebrow="External validation"
-            title="Proof from outside the portfolio."
-            body="A compact set of signals from official event materials, public posts, sponsor recognition, and stakeholder feedback."
-          />
+          <Reveal>
+            <SectionHeader
+              eyebrow="External validation"
+              title="Proof from outside the portfolio."
+              body="A compact set of signals from official event materials, public posts, sponsor recognition, and stakeholder feedback."
+            />
+          </Reveal>
           <div className="grid gap-4 md:grid-cols-2">
             {proofBlocks.map((block, index) => (
-              <figure
-                key={block.source}
-                className={`rounded-[8px] border p-6 shadow-[0_10px_24px_rgba(30,43,34,0.04)] ${
-                  index === 0
-                    ? "border-[#b7c4aa] bg-white/82"
-                    : "border-[#d7ddcf] bg-white/76"
-                }`}
-              >
-                <figcaption className="text-sm font-bold tracking-[0.18em] text-[#697b56] uppercase">
-                  {block.source}
-                </figcaption>
-                <blockquote
-                  className={`mt-4 font-extrabold leading-snug tracking-normal text-[#17231c] ${
-                    index === 0 ? "text-2xl" : "text-xl"
+              <Reveal key={block.source} delay={index * 100}>
+                <figure
+                  className={`rounded-[8px] border p-6 shadow-[0_10px_24px_rgba(30,43,34,0.04)] ${
+                    index === 0
+                      ? "border-[#b7c4aa] bg-white/82"
+                      : "border-[#d7ddcf] bg-white/76"
                   }`}
                 >
-                  &ldquo;{block.quote}&rdquo;
-                </blockquote>
-                <p className="mt-4 text-base leading-7 text-[#506052]">
-                  {block.context}
-                </p>
-                {block.link ? (
-                  <a
-                    href={block.link}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="mx-auto mt-5 flex min-h-10 w-fit items-center justify-center rounded-full bg-[#17231c] px-5 text-sm font-bold !text-white transition hover:-translate-y-0.5 hover:bg-[#25372d]"
+                  <figcaption className="text-sm font-bold tracking-[0.18em] text-[#697b56] uppercase">
+                    {block.source}
+                  </figcaption>
+                  <blockquote
+                    className={`mt-4 font-extrabold leading-snug tracking-normal text-[#17231c] ${
+                      index === 0 ? "text-2xl" : "text-xl"
+                    }`}
                   >
-                    {block.linkLabel}
-                  </a>
-                ) : null}
-              </figure>
+                    &ldquo;{block.quote}&rdquo;
+                  </blockquote>
+                  <p className="mt-4 text-base leading-7 text-[#506052]">
+                    {block.context}
+                  </p>
+                  {block.link ? (
+                    <a
+                      href={block.link}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="mx-auto mt-5 flex min-h-10 w-fit items-center justify-center rounded-full bg-[#17231c] px-5 text-sm font-bold !text-white transition hover:-translate-y-0.5 hover:bg-[#25372d]"
+                    >
+                      {block.linkLabel}
+                    </a>
+                  ) : null}
+                </figure>
+              </Reveal>
             ))}
           </div>
         </section>
 
         <section id="skills" className="space-y-8">
-          <SectionHeader
-            eyebrow="Capabilities"
-            title="How I help a software team."
-            body="No logo wall. These are the working strengths that show up across my projects and professional experience."
-          />
+          <Reveal>
+            <SectionHeader
+              eyebrow="Capabilities"
+              title="How I help a software team."
+              body="No logo wall. These are the working strengths that show up across my projects and professional experience."
+            />
+          </Reveal>
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-            {capabilities.map((capability) => (
-              <article
-                key={capability.title}
-                className="rounded-[8px] border border-[#d7ddcf] bg-white/76 p-6"
-              >
-                <h3 className="text-xl font-extrabold leading-snug text-[#17231c]">
-                  {capability.title}
-                </h3>
-                <p className="mt-3 text-base leading-7 text-[#506052]">
-                  {capability.body}
-                </p>
-              </article>
+            {capabilities.map((capability, index) => (
+              <Reveal key={capability.title} delay={index * 70}>
+                <article className="rounded-[8px] border border-[#d7ddcf] bg-white/76 p-6">
+                  <h3 className="text-xl font-extrabold leading-snug text-[#17231c]">
+                    {capability.title}
+                  </h3>
+                  <p className="mt-3 text-base leading-7 text-[#506052]">
+                    {capability.body}
+                  </p>
+                </article>
+              </Reveal>
             ))}
           </div>
         </section>
 
-        <section
-          id="contact"
-          aria-labelledby="contact-title"
-          className="grid gap-8 rounded-[8px] bg-[#17231c] p-7 text-white shadow-[0_12px_28px_rgba(23,35,28,0.1)] sm:p-10 lg:grid-cols-[0.68fr_0.32fr] lg:items-end"
-        >
-          <div>
-            <p className="text-sm font-bold tracking-[0.22em] text-[#c8d6bb] uppercase">
-              Contact
-            </p>
-            <h2
-              id="contact-title"
-              className="mt-3 max-w-3xl text-4xl font-extrabold tracking-normal"
-              style={{
-                fontFamily: "Avenir Next, Segoe UI, Helvetica Neue, sans-serif",
-              }}
-            >
-              Ready to help a team ship useful software with care.
-            </h2>
-            <p className="mt-4 max-w-2xl text-base leading-8 text-[#dce5d7]">
-              I&apos;m looking for full-stack, frontend, backend, AI automation,
-              and software engineering opportunities where I can contribute to
-              real products.
-            </p>
-          </div>
-          <div className="grid gap-3 text-sm font-bold sm:grid-cols-3 lg:grid-cols-1">
-            <a
-              className="rounded-full bg-white px-5 py-3 text-center !text-[#17231c] transition hover:-translate-y-0.5"
-              href="mailto:anthonyquispilaya@gmail.com"
-            >
-              Email me
-            </a>
-            <a
-              className="rounded-full border border-white/30 px-5 py-3 text-center !text-white transition hover:-translate-y-0.5 hover:bg-white/10"
-              href="https://www.linkedin.com/in/anthony-quispilaya/"
-              rel="noreferrer"
-              target="_blank"
-            >
-              LinkedIn
-            </a>
-            <a
-              className="rounded-full border border-white/30 px-5 py-3 text-center !text-white transition hover:-translate-y-0.5 hover:bg-white/10"
-              href="https://github.com/Anthony-Quispilaya"
-              rel="noreferrer"
-              target="_blank"
-            >
-              GitHub
-            </a>
-          </div>
-        </section>
+        <Reveal>
+          <section
+            id="contact"
+            aria-labelledby="contact-title"
+            className="grid gap-8 rounded-[8px] bg-[#17231c] p-7 text-white shadow-[0_12px_28px_rgba(23,35,28,0.1)] sm:p-10 lg:grid-cols-[0.68fr_0.32fr] lg:items-end"
+          >
+            <div>
+              <Reveal delay={80}>
+                <p className="text-sm font-bold tracking-[0.22em] text-[#c8d6bb] uppercase">
+                  Contact
+                </p>
+              </Reveal>
+              <Reveal delay={150}>
+                <h2
+                  id="contact-title"
+                  className="mt-3 max-w-3xl text-4xl font-extrabold tracking-normal"
+                  style={{
+                    fontFamily:
+                      "Avenir Next, Segoe UI, Helvetica Neue, sans-serif",
+                  }}
+                >
+                  Ready to help a team ship useful software with care.
+                </h2>
+              </Reveal>
+              <Reveal delay={220}>
+                <p className="mt-4 max-w-2xl text-base leading-8 text-[#dce5d7]">
+                  I&apos;m looking for full-stack, frontend, backend, AI
+                  automation, and software engineering opportunities where I can
+                  contribute to real products.
+                </p>
+              </Reveal>
+            </div>
+            <Reveal delay={260}>
+              <div className="grid gap-3 text-sm font-bold sm:grid-cols-3 lg:grid-cols-1">
+                <a
+                  className="rounded-full bg-white px-5 py-3 text-center !text-[#17231c] transition hover:-translate-y-0.5"
+                  href="mailto:anthonyquispilaya@gmail.com"
+                >
+                  Email me
+                </a>
+                <a
+                  className="rounded-full border border-white/30 px-5 py-3 text-center !text-white transition hover:-translate-y-0.5 hover:bg-white/10"
+                  href="https://www.linkedin.com/in/anthony-quispilaya/"
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  LinkedIn
+                </a>
+                <a
+                  className="rounded-full border border-white/30 px-5 py-3 text-center !text-white transition hover:-translate-y-0.5 hover:bg-white/10"
+                  href="https://github.com/Anthony-Quispilaya"
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  GitHub
+                </a>
+              </div>
+            </Reveal>
+          </section>
+        </Reveal>
       </div>
     </main>
   );
