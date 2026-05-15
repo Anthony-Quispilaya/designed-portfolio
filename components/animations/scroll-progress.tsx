@@ -25,10 +25,7 @@ export function ScrollProgress() {
   }, []);
 
   return (
-    <div
-      aria-hidden="true"
-      className="fixed inset-x-0 top-0 z-[60] h-1 bg-transparent"
-    >
+    <div aria-hidden="true" className="h-1 bg-transparent">
       <div
         className="h-full origin-left bg-[#697b56] transition-transform duration-150 ease-out"
         style={{ transform: `scaleX(${progress})` }}

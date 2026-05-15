@@ -66,7 +66,8 @@ button:focus-visible {
 
 .scroll-reveal.is-visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: none;
+  will-change: auto;
 }
 
 .reveal-pill {
@@ -79,7 +80,7 @@ button:focus-visible {
 
 .scroll-reveal.is-visible .reveal-pill {
   opacity: 1;
-  transform: translateY(0);
+  transform: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -605,11 +606,6 @@ button:focus-visible {
 @supports (-webkit-touch-callout: none) {
   body {
     -webkit-overflow-scrolling: touch;
-  }
-
-  /* Safari rounds sub-pixel borders differently — sharpen panels */
-  .panel-shell {
-    -webkit-transform: translateZ(0);
   }
 }
 
