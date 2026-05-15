@@ -50,8 +50,8 @@ Display order:
    - Quote: "Best Business & Enterprise Hack"
    - Context: HackPrinceton 2026 selected LEGR for the business and enterprise track award, with LEGR named in the official winner materials.
 2. **Tapyoca Sponsor Feedback**
-   - Quote: "You've been extremely proactive in your work with us thus far."
-   - Context: Feedback from Myron Paes, Head Product Manager at Tapyoca, recognizing initiative on the sponsored capstone product.
+   - Quote: "Anthony, you’ve been so helpful and have worked so hard throughout this entire capstone. You’ve seriously been the GOAT, and I’ll definitely tell Samuel about you for future opportunities at Tapyoca."
+   - Context: Feedback from Myron Paes, Head Product Manager for Creator Copilot by Tapyoca, recognizing initiative on the sponsored capstone product.
 3. **NJIT Recognition**
    - Quote: "NJIT publicly recognized the LEGR team."
    - Context: The post connects the project to both awards and gives the achievement institutional visibility.
@@ -215,9 +215,9 @@ https://creator-copilot-frontend-production.up.railway.app/
 
 ### Stakeholder Feedback
 
-Source: Myron Paes, Head Product Manager at Tapyoca.
+Source: Myron Paes, Head Product Manager for Creator Copilot by Tapyoca.
 
-> Thank you Anthony! You've been extremely proactive in your work with us thus far, and I'm sure that there will be opportunities available at Tapyoca after this capstone project.
+> Anthony, you’ve been so helpful and have worked so hard throughout this entire capstone. You’ve seriously been the GOAT, and I’ll definitely tell Samuel about you for future opportunities at Tapyoca.
 
 ### Asset
 

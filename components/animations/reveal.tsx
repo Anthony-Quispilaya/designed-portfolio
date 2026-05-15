@@ -18,6 +18,7 @@ export function Reveal({
 }: RevealProps) {
   const ref = useRef<HTMLDivElement | null>(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [hasEntered, setHasEntered] = useState(false);
 
   useEffect(() => {
     const node = ref.current;
@@ -41,13 +42,33 @@ export function Reveal({
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    if (!isVisible || hasEntered) {
+      return;
+    }
+
+    const timeout = window.setTimeout(() => {
+      setHasEntered(true);
+    }, delay + 900);
+
+    return () => window.clearTimeout(timeout);
+  }, [delay, hasEntered, isVisible]);
+
+  const revealClassName = hasEntered
+    ? className
+    : `scroll-reveal scroll-reveal--${distance} ${
+        isVisible ? "is-visible" : ""
+      } ${className}`;
+
   return (
     <div
       ref={ref}
-      className={`scroll-reveal scroll-reveal--${distance} ${
-        isVisible ? "is-visible" : ""
-      } ${className}`}
-      style={{ "--reveal-delay": `${delay}ms` } as CSSProperties}
+      className={revealClassName}
+      style={
+        hasEntered
+          ? undefined
+          : ({ "--reveal-delay": `${delay}ms` } as CSSProperties)
+      }
     >
       {children}
     </div>

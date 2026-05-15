@@ -66,7 +66,7 @@ export function PortfolioHeader() {
 
   return (
     <header
-      className={`sticky inset-x-0 top-0 z-50 border-b bg-[#f7f3ec]/92 backdrop-blur-md transition-colors duration-300 ${
+      className={`border-b bg-[#f7f3ec]/92 backdrop-blur-md transition-colors duration-300 ${
         hasScrolled ? "border-[#c8d0c0]" : "border-[#d7ddcf]/80"
       }`}
     >
