@@ -2,6 +2,7 @@ import { ContactSection } from "@/components/contact/contact-section";
 import { Hero } from "@/components/hero/hero";
 import { SiteNav } from "@/components/layout/site-nav";
 import { About } from "@/components/sections/about";
+import { Education } from "@/components/sections/education";
 import { Experience } from "@/components/sections/experience";
 import { Skills } from "@/components/sections/skills";
 import { Work } from "@/components/sections/work";
@@ -21,6 +22,7 @@ export default function HomePage() {
         <Hero />
         <Work />
         <Experience />
+        <Education />
         <Skills />
         <About />
         <ContactSection />
