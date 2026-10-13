@@ -103,7 +103,7 @@ export function SiteNav() {
           </span>
         </a>
 
-        <ul className="hidden items-center gap-1 md:flex">
+        <ul className="hidden items-center gap-1 lg:flex">
           {nav.map((item) => (
             <li key={item.href}>
               <a
@@ -147,7 +147,7 @@ export function SiteNav() {
           </li>
         </ul>
 
-        <div className="-mr-2 flex items-center gap-1 md:hidden">
+        <div className="-mr-2 flex items-center gap-1 lg:hidden">
           <ThemeToggle />
           <button
             ref={menuButton}
@@ -181,7 +181,7 @@ export function SiteNav() {
         ref={panel}
         hidden={!open}
         className={cx(
-          "border-t md:hidden",
+          "border-t lg:hidden",
           dark ? "border-chalk/15" : "border-ink/10",
         )}
       >

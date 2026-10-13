@@ -10,7 +10,7 @@ export function About() {
       id="about"
       aria-labelledby="about-title"
       data-nav-theme="light"
-      className="border-t border-sand bg-paper py-16 lg:py-20"
+      className="border-t border-sand bg-ivory py-16 lg:py-20"
     >
       <Container>
         <div className="grid gap-10 lg:grid-cols-12">

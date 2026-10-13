@@ -7,7 +7,7 @@ export function Skills() {
       id="skills"
       aria-labelledby="skills-title"
       data-nav-theme="light"
-      className="border-t border-sand bg-ivory py-16 lg:py-20"
+      className="border-t border-sand bg-paper py-16 lg:py-20"
     >
       <Container>
         <Label className="text-stone">Skills</Label>
@@ -23,7 +23,7 @@ export function Skills() {
           {skillGroups.map((g, i) => (
             <div
               key={g.title}
-              className="rounded-md border border-sand-2 bg-paper p-5"
+              className="rounded-md border border-sand-2 bg-ivory p-5"
               {...reveal((i % 3) * 90, "card")}
             >
               <h3 className="text-[1.125rem] leading-tight font-semibold tracking-tight">
@@ -34,7 +34,7 @@ export function Skills() {
                 {g.skills.map((s) => (
                   <li
                     key={s}
-                    className="rounded-sm border border-sand-2 bg-ivory px-2 py-0.5 text-[0.8125rem]"
+                    className="rounded-sm border border-sand-2 bg-paper px-2 py-0.5 text-[0.8125rem]"
                   >
                     {s}
                   </li>
